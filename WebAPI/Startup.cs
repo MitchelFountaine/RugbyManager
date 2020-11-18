@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Services.RugbyPlayerService;
+using Services.RugbyTeamService;
+
 namespace WebAPI
 {
     public class Startup
@@ -28,6 +30,8 @@ namespace WebAPI
             services.AddControllers();
             // Ensure all requests use the same instance by going singleton
             services.AddSingleton<IRugbyPlayerService, RugbyPlayerService>();
+            services.AddSingleton<IRugbyTeamService, RugbyTeamService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
